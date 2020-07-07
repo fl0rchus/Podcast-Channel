@@ -12,6 +12,7 @@ body{
     font-size: 16px;
     font-family: 'IBM Plex Sans', sans-serif;
 }
+
 /* ---- HEADER ----*/
 header {
     width: 100%;
@@ -27,6 +28,7 @@ header {
 }
 header img{
     float: left;
+	width: 36px;
 }
 header nav{
     float: right;
@@ -65,8 +67,8 @@ header nav .menu {
 }
 header nav .menu input {
     display: block;
-    width: 40px;
-    height: 32px;
+    width:40px;
+    height: 24px;
     opacity: 0;
     z-index: 2;
     position: absolute;
@@ -152,7 +154,7 @@ header nav .menu input:checked ~ span:nth-last-child(2){
 #episodios{
     background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
     -webkit-clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
-    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
     width: 100%;
     padding-top: 32px;
     height: 1200px;
@@ -163,7 +165,10 @@ header nav .menu input:checked ~ span:nth-last-child(2){
     grid-template: repeat(2, 1fr);
     justify-self: center;
 }
-
+.episodios__title{
+	margin: 0.875em 0 1em 0.5em;
+	padding: 2%
+}
 #episodios h2{
     font-size:2em;
     color:#FFF;
@@ -171,7 +176,7 @@ header nav .menu input:checked ~ span:nth-last-child(2){
     line-height: 42px;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 300;
-    margin: 0.875em 0 0 0.5em;
+    
 }
 .episodios__contenedor-episodios{
    display: grid;
@@ -341,10 +346,25 @@ footer p{
     text-decoration: none;
     color:#060A24;
 }
+.redes a:hover{
+	color: #00F3BB;
+}
 /* ---- MEDIAQUERIES ---- */
 @media all and (min-width: 320px) and (max-width: 501px){
     header { height: 45px; }
     header nav .menu ul { top: 45px }
+	.episodios__contenedor-episodios{
+		grid-template-columns: repeat(1, 1fr);
+	}
+	header img{
+		width: 24px;
+	}
+	#episodios {
+		-webkit-clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+    	clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+		height: 750px;
+	}
+	
 }
 @media all and (min-width: 480px) and (max-width: 767px){
     .galeria{
@@ -358,6 +378,22 @@ footer p{
         margin: 0 4rem 0rem;
         align-self: center;
     }
+	header img{ width: 24px }
+	.episodios__title{
+	margin: 2em 0 1em 2em;
+	padding: 3%
+}
+	#episodios {
+		-webkit-clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+    	clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+		height: 750px
+	}
+	.episodios__contenedor-episodios{
+		grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+	}
+	#nosotros .contenedor{
+		grid-template-columns: repeat(2, 1fr);
+	}
    
 }
 @media all and (min-width: 768px) and (max-width: 959px){
@@ -397,6 +433,10 @@ footer p{
         padding: 0 0 4.6875rem;
     }
     #episodios { height: 100%; }
+	.episodios__title{
+	margin: 2em 0 1em 2em;
+	padding: 3%
+}
 }
 @media all and (min-width: 960px) and (max-width: 1199px){
     .episodios__contenedor-episodios {
@@ -503,4 +543,19 @@ footer p{
     .tema { margin: 2em }
     .tema img { margin-bottom: 1em; }
     .tema p { font-size: 1.5em; }
+}
+
+@media (max-width: 600px){
+	.episodios__contenedor-episodios{
+		grid-template-columns: repeat(1, 1fr);
+	}
+	#episodios{ height: 1250px }
+	#nosotros .contenedor {
+		grid-template-columns: repeat(1,1fr);
+	}
+	footer p{
+		font-size: 0.7em;
+	}
+	header { height: 45px; }
+    header nav .menu ul { top: 45px }
 }
