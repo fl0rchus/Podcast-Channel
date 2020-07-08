@@ -553,7 +553,7 @@ footer p{
     .tema p { font-size: 1.5em; }
 }
 
-@media (max-width: 600px){
+@media (max-width: 667px){
 	.episodios__contenedor-episodios{
 		grid-template-columns: repeat(1, 1fr);
 	}
